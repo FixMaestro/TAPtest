@@ -1,0 +1,18 @@
+{
+  "solution": {
+    "path": "TAP.sln",
+    "projects": [
+		"TAP.Shared\\TAP.Shared.shproj",
+
+		"TAP.Droid\\TAP.Droid.csproj",
+
+		"TAP.iOS\\TAP.iOS.csproj",
+
+		"TAP.Wasm\\TAP.Wasm.csproj",
+
+		"TAP.macOS\\TAP.macOS.csproj",
+
+		"TAP.Skia.Gtk\\TAP.Skia.Gtk.csproj",
+    ]
+  }
+}

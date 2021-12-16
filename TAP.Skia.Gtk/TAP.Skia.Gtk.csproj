@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType Condition="'$(Configuration)'=='Release'">WinExe</OutputType>
+    <OutputType Condition="'$(Configuration)'=='Debug'">Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+    <DefineConstants>HAS_WINUI</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup Condition="exists('..\TAP.UWP')">
+    <EmbeddedResource Include="..\TAP.UWP\Package.appxmanifest" LogicalName="Package.appxmanifest" />
+    <Content Include="..\TAP.UWP\Assets\StoreLogo.png" Link="Assets\StoreLogo.png" />
+    <Content Include="Assets\Fonts\uno-fluentui-assets.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <UpToDateCheckInput Include="..\TAP.Shared\**\*.xaml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Prism.DryIoc.Uno.WinUI" />
+    <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="6.0.0" />
+    <PackageReference Include="Uno.WinUI.Skia.Gtk" Version="4.0.11" />
+    <PackageReference Include="Uno.WinUI.RemoteControl" Condition="'$(Configuration)'=='Debug'" Version="4.0.11" />
+  </ItemGroup>
+  <Import Project="..\TAP.Shared\TAP.Shared.projitems" Label="Shared" />
+</Project>
